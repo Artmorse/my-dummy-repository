@@ -14,7 +14,8 @@ pipeline {
         }
         stage('Clone bis') {
             steps {
-                git 'https://github.com/Artmorse/my-dummy-repository-bis.git'
+                git 'https://github.com/Artmorse/my-dummy-repository-bis'
+                ls
             }
         }
         stage('Deploy') {
