@@ -12,6 +12,11 @@ pipeline {
                 echo 'Testing..'
             }
         }
+        stage('Clone bis') {
+            steps {
+                git 'https://github.com/Artmorse/my-dummy-repository-bis.git'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
