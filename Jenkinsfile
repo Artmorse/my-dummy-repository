@@ -1,3 +1,5 @@
+@Library('ge-libs') _
+
 pipeline {
     agent any
 
