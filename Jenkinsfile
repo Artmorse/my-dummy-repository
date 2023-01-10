@@ -1,4 +1,4 @@
-@Library('ge-libs') _
+@Library('my-dummy-shared-library') _
 
 pipeline {
     agent any
