@@ -1,3 +1,5 @@
+@Library('my-dummy-shared-library') _
+
 pipeline {
     agent any
 
@@ -10,6 +12,11 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+            }
+        }
+        stage('Clone bis') {
+            steps {
+                git url: 'https://github.com/Artmorse/my-dummy-repository-bis', branch: 'main'
             }
         }
         stage('Deploy') {
