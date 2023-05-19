@@ -1,5 +1,3 @@
-@Library('my-dummy-shared-library') _
-
 pipeline {
     agent any
 
