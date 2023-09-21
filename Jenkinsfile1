@@ -1,0 +1,32 @@
+pipeline {
+    agent any  // Use any available agent (Jenkins executor)
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the GitHub repository using Git SCM
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run Maven tests
+                sh 'mvn test'
+            }
+        }
+    }
+        
+    post {
+        always {
+            // Archive the JUnit test reports
+            junit '**/target/surefire-reports/*.xml'
+        }
+    }
+}
