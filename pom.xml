@@ -39,6 +39,12 @@
         <artifactId>jaxb-api</artifactId>
         <version>2.2</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.0.0</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/it.unimi.dsi/fastutil -->
     <dependency>
         <groupId>it.unimi.dsi</groupId>
