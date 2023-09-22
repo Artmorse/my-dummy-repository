@@ -4,16 +4,10 @@
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
-registries:
-  nexus-internal:
-    type: maven-repository
-    url: https://nexus-internal.cloudbees.com/content/groups/mirror
-    username: ${{secrets.NEXUS_INTERNAL_USERNAME}}
-    password: ${{secrets.NEXUS_INTERNAL_PASSWORD}}
 updates:
   - package-ecosystem: "maven" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "09:57"
+      time: "09:58"
       timezone: "Europe/Paris"
