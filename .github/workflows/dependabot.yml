@@ -1,0 +1,22 @@
+name: Add Comment to Dependabot PR
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if PR is from Dependabot
+        id: check_dependabot
+        run: echo ::set-output name=is_dependabot::${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+
+      - name: Add Comment to Dependabot PR
+        if: steps.check_dependabot.outputs.is_dependabot == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "When updating `jenkins-plugins`, please manually update the dynamic preview environment `cloudbees-core-cm` version in [`preview/Dockerfile`](https://github.com/cloudbees/cloudbees-pipeline-explorer-plugin/blob/main/preview/Dockerfile#L1) to match the upstream version from `jenkins-plugins` before merging the PR." | gh issue comment ${{ github.event.pull_request.number }}
