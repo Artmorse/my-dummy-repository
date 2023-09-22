@@ -14,7 +14,9 @@ updates:
   - package-ecosystem: "maven" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "daily"
+      time: "09:52"
+      timezone: "Europe/Paris"
     registries:
       - nexus-internal
     reviewers:
