@@ -15,13 +15,5 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-      time: "09:52"
+      time: "09:55"
       timezone: "Europe/Paris"
-    registries:
-      - nexus-internal
-    reviewers:
-      - "cloudbees/team-concordia"
-    ignore:
-    # Requires Java 17
-    - dependency-name: net.datafaker:datafaker
-      versions: [">=2.0.0"]
